@@ -9,7 +9,7 @@ class PostListTileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 12,
+      itemCount: 5,
       itemBuilder: (context, index) {
         return Card(
           elevation: 4,

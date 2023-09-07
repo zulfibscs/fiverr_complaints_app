@@ -5,6 +5,9 @@ import 'package:fiverr_complaint_app/Screens/pending_user_screen.dart';
 import 'package:fiverr_complaint_app/Screens/send_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import 'list1.dart';
+import 'userListScreen.dart';
 class DashboardScreen extends StatelessWidget {
 
   List<Map<String, dynamic>> dataList = [
@@ -24,7 +27,7 @@ class DashboardScreen extends StatelessWidget {
       body: Column(
         children: [
         Expanded(
-          flex: 1,
+          flex: 2,
           child: Container(
             width: double.infinity,
           color: Colors.transparent,
@@ -37,10 +40,10 @@ class DashboardScreen extends StatelessWidget {
                   )
               ),
               child: Padding(
-                padding: const EdgeInsets.only(left: 15.0,bottom: 30),
+                padding: const EdgeInsets.only(left: 10.0,bottom: 50),
                 child: Align(
                   alignment: Alignment.bottomLeft,
-                    child: Text("DASHBOARD",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600,fontSize: 23),)),
+                    child: Text("DASHBOARD",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 19),)),
               )
           ),
       ),
@@ -78,11 +81,11 @@ class DashboardScreen extends StatelessWidget {
 
                           }
                           else if(index==4){
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => PendingUser(),));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => UserList(),));
 
                           }
                           else if(index==5){
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => ApprovedPostScreen(),));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => MyList(),));
 
                           }
                         },

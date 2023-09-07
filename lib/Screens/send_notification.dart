@@ -1,22 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-class SendNotification extends StatefulWidget {
+class SendNotification extends StatelessWidget {
   final bool fromDashboard;
-   SendNotification({super.key,required this.fromDashboard});
+   const SendNotification({super.key,required this.fromDashboard});
 
-  @override
-  State<SendNotification> createState() => _SendNotificationState();
-}
-
-class _SendNotificationState extends State<SendNotification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Send Notification',style: TextStyle(fontFamily: 'ProximaNova',),),
-        leading: GestureDetector(child: widget.fromDashboard ? Icon(Icons.arrow_back_ios): null,
-        onTap: (){Navigator.pop(context);},),
-      ),
+        bottom: const PreferredSize(
+          preferredSize: Size.zero,
+          child:    Text('Send Notification',style: TextStyle(fontFamily: 'ProximaNova',fontSize:18,fontWeight: FontWeight.w600),),
+        ),
+        leading: GestureDetector(child: fromDashboard ? Icon(Icons.arrow_back_ios): null, onTap: (){Navigator.pop(context);},)),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
@@ -58,21 +54,19 @@ class _SendNotificationState extends State<SendNotification> {
                     borderRadius: BorderRadius.circular(5),
                   )
                 ) ,),
-                Padding(
-                  padding: const EdgeInsets.all(118.0),
-                  child: ElevatedButton(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Center(child: Text("Send",style: TextStyle(fontWeight: FontWeight.w300),)),
+              SizedBox(height: 90,),
+              ElevatedButton(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(child: Text("Send",style: TextStyle(fontWeight: FontWeight.w300),)),
+                ),
+                  onPressed: () => print("it's pressed"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                  shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
                   ),
-                    onPressed: () => print("it's pressed"),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25.0),
-                    ),
-    )),
-                )
+    ))
             ],
           ),
         ),
