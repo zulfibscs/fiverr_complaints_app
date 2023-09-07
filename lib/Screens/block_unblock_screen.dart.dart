@@ -1,5 +1,4 @@
-import 'package:fiverr_complaint_app/Screens/pending_user_screen.dart';
-import 'package:fiverr_complaint_app/Screens/widgets/ListTile.dart';
+import 'package:fiverr_complaint_app/Screens/widgets/listTile.dart';
 import 'package:flutter/material.dart';
 
 class BlockUnblockScreen extends StatefulWidget {
@@ -26,8 +25,17 @@ class _BlockUnblockScreenState extends State<BlockUnblockScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
+      appBar: AppBar(
+        title: Text('Block/Unblock User'),
+        leading: GestureDetector(
+          child: Icon(Icons.arrow_back_ios),
+          onTap: (){    Navigator.pop(context);
+          },
+        ),
+      ),
+      body:
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 6,vertical: 15),
         child: Column(
           children: [
             // give the tab bar a height [can change hheight to preferred height]
@@ -62,13 +70,14 @@ class _BlockUnblockScreenState extends State<BlockUnblockScreen>
                 ],
               ),
             ),
+            SizedBox(height: 19,),
             // tab bar view here
             Expanded(
               child: TabBarView(
                 controller: _tabController,
                 children: [
                   CustomListTile(
-                    userName: 'User Name',
+                    userName: 'Zulfi',
                     tagList: '_@Fiverr_id',
                     userEmail: 'abc@gmail.com',
                     urlImg: 'assets/images/baby.jpg',
@@ -77,10 +86,10 @@ class _BlockUnblockScreenState extends State<BlockUnblockScreen>
                     Navigator.push(context, MaterialPageRoute(builder: (context) => BlockUnblockScreen(),));
                   },),
                   CustomListTile(
-                    userName: 'User Name',
+                    userName: 'Zulfi',
                     tagList: 'tagList',
-                    userEmail: 'abc@gmail.com',
-                    urlImg: 'assets/images/child.jpg',
+                    userEmail: 'userEmail',
+                    urlImg: 'assets/images/girl.jpg',
                     btn1Lable: 'Unblock',
                     btn1Fun: (){},
                     isBtn2Visible: false,

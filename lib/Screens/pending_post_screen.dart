@@ -7,7 +7,7 @@ class PendignPostScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: Colors.grey.shade200,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Pending Post'),
         leading: GestureDetector(
@@ -17,7 +17,7 @@ class PendignPostScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 12),
         child: PostListTileWidget(userName: 'Buyer Id', des: "What is Lorem Ipsum "
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             btnLable: 'View', btnFun: (){

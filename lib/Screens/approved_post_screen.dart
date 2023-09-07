@@ -6,7 +6,7 @@ class ApprovedPostScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: Colors.grey.shade200,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Approved Post'),
         leading: GestureDetector(

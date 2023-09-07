@@ -3,18 +3,11 @@ import 'package:fiverr_complaint_app/Screens/profile_screen.dart';
 import 'package:fiverr_complaint_app/Screens/send_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar:PersistentTabView(
+    return PersistentTabView(
 
         context,
         controller: PersistentTabController(initialIndex: 0),
@@ -72,8 +65,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         navBarStyle: NavBarStyle.style7,
 
-
-      ),
     );
 
   }
